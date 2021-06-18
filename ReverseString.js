@@ -7,6 +7,10 @@
 // Input: s = ["h","e","l","l","o"]
 // Output: ["o","l","l","e","h"]
 
+//Success
+// Details 
+// Runtime: 100 ms, faster than 96.58% of JavaScript online submissions for Reverse String.
+
 
 var reverseString = function(s) {
   
