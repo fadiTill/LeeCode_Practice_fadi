@@ -11,7 +11,7 @@ var sortedSquares = function(nums) {
     
     //solution
     
-    // let solution = []
+    
     //loop trought the array
     for (i= 0; i<nums.length;i++){
          //square each element 
