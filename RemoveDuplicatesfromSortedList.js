@@ -18,8 +18,8 @@
          //to remove replace head 
          ///a.next = b;
         //b.next = c;
-         if(current.val = current.next.val){
-             current.next = current.next.next
+         if(current.val == current.next.val){
+             current.next = current.next.next;
          }
          else{
              current = current.next;
