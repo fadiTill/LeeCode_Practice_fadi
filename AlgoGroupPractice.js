@@ -25,7 +25,7 @@ class Node {
       let posttNode = null;
       let preNode = null;
   
-  while(practice){
+  while(current){
    return list.head.next
   }
       // console.log(current)
@@ -59,4 +59,53 @@ class Node {
   //3. Add a node after a node with a given value
   //4. Reverse the list
   // 5.Create a doubly linked list
+  //1. Print the list as an object
+  function printList(list, test){
+    console.log(list.head)
+ }
+
+//  printList(list,test)
+
+//2. Add a node at the beginning of the list
+function  addNodeFirst(list, test){
+  let current = list.head
+  list.head.val = 12
+  console.log(current)
   
+  
+}
+addNodeFirst(list, test)
+
+//3. Add a node after a node with a given value
+
+function addNodeAfter(list, test){
+ let currentNode = list.head
+ list.head.next.val = 13
+ console.log(currentNode)
+   
+    
+}
+addNodeAfter(list, test)
+
+
+//4. Reverse the list
+
+function reverseList(list,test){
+  let currentList = list.head
+  let postNode = 0;
+  let preNode = 0;
+  while( currentList ){
+postNode = currentList.next;
+currentList.next = preNode;
+preNode = currentList; 
+currentList = postNode; 
+  }
+return preNode 
+}
+reverseList(list,test)
+//test
+
+function testNode (list,test ){
+  console.log(list.head)
+}
+testNode (list,test )
