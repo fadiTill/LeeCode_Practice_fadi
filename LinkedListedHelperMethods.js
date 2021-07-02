@@ -25,8 +25,31 @@ class Node{
         // if empty set head tail are new node 
         //else  next property be new tail and tail new node created 
         //increment lenght
+        this.length++;
+        return this;
+      }
+
+      //def function if empty return undefined 
+    pop(){
+      if(!this.head) return undefined;
+     var  current = this.head;
+     var nTail = current;
+     while(current.next){
+       nTail = current;
+       current = current.next;
+ }
+
+      this.tail = nTail;
+      this.tail.next = null;
+      this.length--;
+      if(this.length ===0){
+        this.head = null;
+        this.tail = null;
+      }
+      return current 
       }
     }
+  
   
   
   // var premier = new Node("Bonjour")
@@ -35,5 +58,8 @@ class Node{
   // premier.next.next.next = ("bien ?")
   var list = new Singly()
   list.push("Bonjour")
+  console.log(list)
   
    list.push("Aurevoir")
+   list.pop()
+  console.log(list.length)
