@@ -31,6 +31,7 @@ var lengthOfLastWord = function(s) {
            space = false;
      } else {
          if (!space){
+           // stop loop
            break
              
          }
