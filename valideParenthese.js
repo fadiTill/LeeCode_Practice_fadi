@@ -7,7 +7,7 @@
 // Open brackets must be closed in the correct order.
 // Example 1:
 
-// Input: s = "()"
+// Input: s = "[]"
 // Output: true
 
 //Example 2:
