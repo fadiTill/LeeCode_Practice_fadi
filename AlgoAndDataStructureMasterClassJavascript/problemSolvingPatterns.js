@@ -184,3 +184,34 @@ while(left < right){
   }
    countUniqueValues([[1,1,1,1,1,2]])
 
+//Sliding Window 
+//create a window number or array from one position
+// window will increase or closes 
+// great way to track subset of data 
+
+//write a function maxSubbaraySum wich accepts an array of integers and number called n.
+//The function should calculate the maximum sum of n consecutive elements in the array.
+
+maxSubarraySum([1,2,5,2,8,1,5],2) //10
+maxSubarraySum([],4) // null
+
+//Brut force
+function maxSubarraySum(arr,num){
+    if(num > arr.length){
+        return null;
+    }
+    var max = -Infinity;
+    for(let i = 0; i < arr.length - num + 1; i++){
+        temp = 0;
+        for(let j = 0; j < num; j++){
+            temp += arr[i+j];
+        }
+        if (temp > max){
+            max = temp;
+        }
+        console.log(temp,max)
+    }
+    return max;
+}
+
+maxSubarraySum([2,6,9,2,1,8,5,6,3],3)
