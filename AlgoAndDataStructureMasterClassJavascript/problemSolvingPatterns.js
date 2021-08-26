@@ -1,5 +1,7 @@
 //Frequency Counter
 
+const { StandaloneSearchBox } = require("@react-google-maps/api");
+
 //write a function called same, wich acceps two arrays.
 //Thefunction should return true if every value in the array has it 's corresponding value squared in the second
 //array.The frequency of values must be the same.
@@ -202,6 +204,7 @@ function maxSubarraySum(arr,num){
     }
     var max = -Infinity;
     for(let i = 0; i < arr.length - num + 1; i++){
+        //so we stop when arr length smaller then num
         temp = 0;
         for(let j = 0; j < num; j++){
             temp += arr[i+j];
@@ -215,3 +218,96 @@ function maxSubarraySum(arr,num){
 }
 
 maxSubarraySum([2,6,9,2,1,8,5,6,3],3)
+
+
+//Refactor O(N)
+
+function maxSubarraySum(arr,num){
+    let maxSum = 0;
+    let tempSum = 0;
+    if (arr.length < num) return null;
+    for (let i = 0; i < num; i++){
+      //loop trough the first subararry of 3 indice
+      //0,1,2
+      // console.log(i)
+        maxSum += arr[i]
+        // maxSum is the the sum of the first 3 indice 2+6+9
+        
+    }
+    tempSum = maxSum;
+    //set temp Sum to maxSum 17 for the first loop
+    // console.log(tempSum)
+    for(let i = num; i < arr.length; i++){
+      //loop again now start at the indice 3 and increment until reach end of array
+      console.log(tempSum)
+      // tempSUM is 17,17,12,11,14,19
+        tempSum = tempSum - arr[i - num] + arr[i];
+        //tempSum = (17 - 2)+ 2 = 17
+        //tempSum = (17 - 6) + 1 = 12
+        //tempSum = (12 - 9) + 8 = 11
+        console.log(arr[i - num])
+        // arr[i - num] is 2,6,9,2,1,8,
+        // array[i] is 2,1,8,5,6,3
+       
+        // console.log(tempSum)
+        //tempSum is 17,12,11,14,19
+        maxSum = Math.max(maxSum, tempSum);
+    }
+    return maxSum
+}
+
+maxSubarraySum([2,6,9,2,1,8,5,6,3],3)
+
+
+//Divide and Conquer
+//This pattern involves divinding a data set into smaller chunks then reapeating a process 
+//with subset of data it decrease time complexity
+
+//Example
+//Given a sorted array of integers, write a function called search 
+//that accepts a value and returns the 
+//index where the value passed to the function is located.
+//If the value is not found, return -1
+
+
+search([1,2,3,4,5,6],4)//3
+search([1,2,3,4,5,6,],6)//5
+search([1,2,3,4,5,6],11)//-1
+
+//Brut solution Linear Search O(N)
+
+function search(arr,val) {
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i] === val){
+            return i;
+        }
+    }
+    return -1;
+}
+
+
+//refactor 
+
+function search(array, val){
+
+    let min = 0;
+    let max = array.length -1;
+
+    while(min <= max){
+        let middle = Math.floor((min + max)/2);
+        let currentElement = array[middle];
+        
+        if (array[middle] < val) {
+            min = middle + 1;
+        }
+        else if (array[middle] > val) {
+            max = middle -1;
+        }
+        else {
+            return middle;
+        }
+    }
+    return -1
+}
+
+search([1,2,3,4,5,6],4)
