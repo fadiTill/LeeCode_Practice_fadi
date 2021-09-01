@@ -60,9 +60,41 @@ function searchVal(arr, val){
     binarySearch([2,5,6,9,13,15,28],15)
   //            L     M         R
 
-  //while left pointer comes before the right pointer
-  //create pointer in the middle 
-  //if you found value return index
-  //if value too small move left pointer up
-  //if the value is too large, move right pointer down
-  //if never find value return -1
+  //Big O
+  // worst O(log n)
+  //best O(1)
+
+
+
+  //string search brut force 
+
+
+  
+
+  function stringSearch(long, short){
+    var count = 0;
+    //Loop other the longer string
+    for(let i = 0; i < long.length; i++){
+      //loop other the shorter string
+      for(let j = 0; j < short.length;j++){
+        console.log(short[j],long[i+j])
+        //check if characteres don 't match ? breack of the inner loop
+      if(short[j] !== long[i+j]){
+        console.log("break")
+        break;
+      }
+        if(j === short.length - 1){
+          console.log("found")
+          //if found match increment match
+          count++;
+        }
+     
+      
+      }
+   
+    
+  }
+  return count; 
+}
+
+    stringSearch("hello world","hello")
