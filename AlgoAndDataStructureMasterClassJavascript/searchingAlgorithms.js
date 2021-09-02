@@ -78,7 +78,7 @@ function searchVal(arr, val){
       //loop other the shorter string
       for(let j = 0; j < short.length;j++){
         console.log(short[j],long[i+j])
-        //check if characteres don 't match ? breack of the inner loop
+        //check if characteres don 't match ? break of the inner loop
       if(short[j] !== long[i+j]){
         console.log("break")
         break;
