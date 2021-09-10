@@ -44,10 +44,6 @@ const swap = (arr, idx1, idx2) => {
 }
 
 
-//start looping i the end to the begining
-//start inner loop from the begining until i-1
-//if arr[j] is greater than arr[j+1], swap those two values!
-//Return the sorted array.
 
 
 function bubbleSort(arr){
@@ -66,6 +62,12 @@ function bubbleSort(arr){
 
 bubbleSort([37,45,29,8])
 
+//start looping i the end to the begining
+//start inner loop from the begining until i-1
+//if arr[j] is greater than arr[j+1], swap those two values!
+//Return the sorted array.
+
+
 //reformat
 // don 't go further then 45 
 function bubbleSort(arr){
@@ -82,3 +84,47 @@ function bubbleSort(arr){
   }
   
   bubbleSort([37,45,29,8])
+
+
+
+  function bubbleSortTwo (arr) {
+      const swap = (arr, idx1, idx2) => {
+          [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
+      };
+      for (let i = arr.length; i > 0; i--){
+          for (let j = 0; j < i-1; j++){
+              if(arr[j] > arr[j+1]){
+                  swap(arr,j,j+1);
+              }
+          }
+      }
+      return arr;
+  }
+
+  bubbleSortTwo([37,45,29,8])
+
+
+  //optimization if data almost sorted
+  //stop sorted if no swap
+  //0(n)
+  function bubbleSortTree (arr) {
+      var noSwaps;
+    for( i = arr.length; i > 0; i--){
+        noSwaps = true;
+        for(var j = 0; j < 1; j++){
+            console.log(arr, arr[j], arr[j+1]);
+            if(arr[j] > arr[j+1]){
+                var temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+                noSwaps = false;
+            }
+        }
+        if(noSwaps)break;
+    }
+    return arr;
+}
+
+bubbleSort([8,1,2,3,4,5,6,7]);
+
+//time complexity in general is 0(n2) because of nested loop
