@@ -189,3 +189,22 @@ function selectionSort(arr) {
    selectionSort([0,2,34,22,10,19,17])
 
    //time complexity O(n^2)
+
+
+   //Insertion Sort
+   //start by taking the second element in the array
+   //compare the second element with the one before 
+   //continue to the next element and if it is incorrect order itereate trough the sorted  portion
+   //Reapeat until the array is sorted.
+
+   function insertionSort(arr){
+       for (var i = 1; i < arr.length; i++){
+           var currentVal = arr[i];
+           for(var j = i - 1; j >= 0 && arr[j] > currentVal; j--){
+            arr[j+1] = arr[j]
+           }
+           arr[j+1] = currentVal;
+       }
+       return arr;
+   }
+   insertionSort([2,1,9,76,4])
