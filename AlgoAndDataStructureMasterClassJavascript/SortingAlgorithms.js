@@ -192,17 +192,20 @@ function selectionSort(arr) {
 
 
    //Insertion Sort
-   //start by taking the second element in the array
-   //compare the second element with the one before 
-   //continue to the next element and if it is incorrect order itereate trough the sorted  portion
-   //Reapeat until the array is sorted.
+   
+   
+   
 
    function insertionSort(arr){
+       //start by taking the second element in the array
        for (var i = 1; i < arr.length; i++){
            var currentVal = arr[i];
+           //compare the second element with the one before 
            for(var j = i - 1; j >= 0 && arr[j] > currentVal; j--){
             arr[j+1] = arr[j]
            }
+   //continue to the next element and if it is incorrect order itereate trough the sorted  portion
+   //Reapeat until the array is sorted.
            arr[j+1] = currentVal;
        }
        return arr;
