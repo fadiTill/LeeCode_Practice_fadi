@@ -43,3 +43,5 @@ function pivot(arr, start=0, end=arr.length+1){
  }
  quickSort([4,6,9,1,2,5])
 
+//O(log n) best case
+//worst case if sorted  each decomposition move  one idem
