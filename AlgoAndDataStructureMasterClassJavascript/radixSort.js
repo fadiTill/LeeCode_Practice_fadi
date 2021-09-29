@@ -52,3 +52,9 @@ function radixSort(nums){
     // console.log(maxDigitsCount)
 }
  radixSort([23,345,5467,12,2345,9852])
+
+ //Big O
+// O(nk)
+//n length of array
+//k number of digits(average)
+//time complexity depend if there unique data because of the way of computer store numbers
