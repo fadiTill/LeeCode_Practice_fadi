@@ -21,7 +21,7 @@
        if(num === 0) return 1;
        return Math.floor(Math.log10(Math.abs(num))) + 1;
    }
- digitCount(423)
+//  digitCount(423)
 
  function mostDigits(nums){
      let maxDigits = 0;
@@ -35,10 +35,20 @@
 //  mostDigits([1,2,45,1000])
 function radixSort(nums){
     let maxDigitsCount = mostDigits(nums);
+    //loop trought the array and stop at the length of the biger number length in this exemple 4
     for(let k = 0; k < maxDigitsCount; k++){
+        //create empty 10 buckets to orgonize the digit
         let digitBuckets = Array.from({length: 10}, ()=>[]);
-        for(let i =  0;  i< nums.length; i++)
+        for(let i =  0;  i < nums.length; i++){
+        let digit = getDigit([i],k);
+        digitBuckets[digit].push(nums[i]);
+            
+        }
+        // console.log(digitBuckets)
+        //add individula subarray to one array
+        nums = [].concat(...digitBuckets)
     }
+    return nums
     // console.log(maxDigitsCount)
 }
-radixSort([23,345,5467,12,2345,9852])
+ radixSort([23,345,5467,12,2345,9852])
