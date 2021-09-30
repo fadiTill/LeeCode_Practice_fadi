@@ -63,7 +63,7 @@ Student.enrollStudents()
 //     fullName() {
 //          return `Your full name is ${this.firstName} ${this.lastName}`;
 //     }
-// //utility function, part of the calss
+// //utility function, part of the class
 //     static enrollStudents(...students){
 
 //     }
@@ -74,3 +74,24 @@ Student.enrollStudents()
 // let secondStudent = new  Student("Eva","Till");
 
 // Student.enrollStudents([firstStudent, seconStudent])
+
+
+class Point{
+    constructor(x,y) {
+        this.x = x;
+        this.y = y;
+    }
+    // Neither static methods nor static properties can be called on instances of the class. 
+    //instead, they 're called on the class
+    //itself
+    static distance(a,b){
+        const dx = a.x - b.x;
+        const dy = a.y - b.y;
+
+        return Math.hypot(dx, dy);
+    }
+}
+const p1 = new Point(5,5);
+const p2 = new Point(10,10);
+
+Point.distance(p1,p2)
