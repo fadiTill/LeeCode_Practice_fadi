@@ -23,7 +23,24 @@ class SinglyLinkedList{
         this.length = 0;
 
     }
+   
+
     push(val){
+       // create a new node using the value passed to the function
+
+        var newNode = new Node(val);
+        //If there is no head property on the list, set the head and tail to be newly created node
+        if(!this.head){
+            this.head = newNode;
+            this.tail = this.head;
+           // Otherwise set the next property on the list to be the newly created node.
+        } else{
+            this.tail.next = newNode
+            this.tail = newNode;
+        }
+        //increment the length by one
+        this.length++;
+        return this;
 
     }
 }
@@ -38,10 +55,7 @@ class SinglyLinkedList{
 
 var list = new SinglyLinkedList()
 list.push("HELLO")
-list.push("Goodbye")
+console.log(list)
+ list.push("Goodbye")
+ console.log(list)
 
-//Push method accept a value 
-//create a new node using the value passed to the function
-//If there is no head property on the list, set the head and tail to be newly created node 
-//Otherwise set the next property on the list to be the newly created node.
-//incerement the lenght by one
