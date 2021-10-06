@@ -34,8 +34,8 @@ class SinglyLinkedList{
             this.head = newNode;
             this.tail = this.head;
            // Otherwise set the next property on the list to be the newly created node.
-        } else{
-            this.tail.next = newNode
+        } else {
+            this.tail.next = newNode;
             this.tail = newNode;
         }
         //increment the length by one
@@ -43,7 +43,24 @@ class SinglyLinkedList{
         return this;
 
     }
+    pop(){
+       if(!this.head) return indefined;
+       var current = this.head;
+       var newTail = current;
+       while(current.next){
+           newTail = current;
+           current = current.next;
+       }
+       this.tail = newTail;
+       this.tail.next = null;
+    }
 }
+
+//def  return indefined 
+//loop trought the list until you reach the tail 
+//set the tail to be the 2nd to last node 
+//Decrement the length of the list by 1 
+//return the value of the node removed 
 
 
 
@@ -58,4 +75,8 @@ list.push("HELLO")
 console.log(list)
  list.push("Goodbye")
  console.log(list)
+ list.push("bonjour")
+ console.log(list)
+ list.pop()
+console.log(list)
 
