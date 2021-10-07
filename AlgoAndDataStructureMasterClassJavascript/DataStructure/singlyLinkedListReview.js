@@ -43,25 +43,53 @@ class SinglyLinkedList{
         return this;
 
     }
+
+
     pop(){
+        //def  return indefined 
        if(!this.head) return indefined;
        var current = this.head;
        var newTail = current;
+       //loop trought the list until you reach the tail 
+       //set the tail to be the 2nd to last node 
        while(current.next){
            newTail = current;
            current = current.next;
        }
        this.tail = newTail;
        this.tail.next = null;
+       //Decrement the length of the list by 1 
+       this.length--;
+       //when we reach the end of the list to avoid going into negatif numbers
+       if(this.length === 0){
+           this.head = null;
+           this.tail = null;
+
+       }
+       return current;
+    }
+    shift(){
+        //if there are no nodes, return undefined
+        if(!this.head) return undefined
+        //store the current head property in a variable 
+         var currentHead = this.head;
+         //set the head property to the current head's next property
+         this.head = currentHead.next;
+         //Decrement the length by 1
+         this.length--;
+         if(this.length === 0){
+             this.tail = null;
+
+         }
+         return currentHead;
     }
 }
 
-//def  return indefined 
-//loop trought the list until you reach the tail 
-//set the tail to be the 2nd to last node 
-//Decrement the length of the list by 1 
-//return the value of the node removed 
 
+
+
+
+//Return the value of the node removed.
 
 
 // var first = new Node("Hi")
@@ -78,5 +106,9 @@ console.log(list)
  list.push("bonjour")
  console.log(list)
  list.pop()
-console.log(list)
+// console.log(list)
+// list.pop()
+//  console.log(list)
+//   list.pop()
+//   console.log(list)
 
