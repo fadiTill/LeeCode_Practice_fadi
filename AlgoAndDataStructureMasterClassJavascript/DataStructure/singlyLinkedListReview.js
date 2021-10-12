@@ -106,6 +106,16 @@ class SinglyLinkedList{
         return current;
     }
 
+    set(index, val){
+        var foundNode = this.get(index);
+        if(foundNode){
+            foundNode.val = val;
+            return true;
+        }
+        return false;
+
+    }
+
 }
 
 
@@ -145,4 +155,5 @@ console.log(list)
 list.unshift("yay")
 console.log(list)
 list.get(2)
+list.set(1, "Hello")
 
