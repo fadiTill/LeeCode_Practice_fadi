@@ -83,6 +83,15 @@ class SinglyLinkedList{
          }
          return currentHead;
     }
+    //Unshifting pseudocode
+//function accept a value
+//create a new node using the value passed to the function
+//if there is no head property on the list, set the head and tail to be the newly created node 
+//otherwise set the newly created node's next property to be current head property on the list
+//set the head property on the list to be that newly created node 
+//increment the length of list by 1 
+//return the linked list
+
     unshift(val){
         var newNode = new Node(val);
         if(!this.head){
@@ -115,29 +124,53 @@ class SinglyLinkedList{
         return false;
 
     }
-
+    insert(index, val) {
+        //if the index is less than zero or greater than the length, return false
+        if(index < 0 || index > this.length) return false;
+        //if the index is the same as the length, push a new node to the end of the list
+        if(index === this.length) return this.push(val);
+        //if the index is 0, unshift a new node to the start of the list
+        if(index === 0) return this.unshift(val);
+        
+        
+         //set the next property on that node to be the new node
+        var newNode = new Node(val);
+        //otherwise, using the get method, access the node at the index -1
+        var prev = this.get(index - 1);
+        //create a temp  variable to place hold the value
+        var temp = prev.next
+       //set the next property on the new node to be the previous next
+        prev.next = newNode;
+        //increment the length
+        //return true 
+        this.length++;
+        return true;
+    
+    }
+    
+    
+    
+    
+    
 }
 
 
-//Unshifting pseudocode
-//function accept a value
-//create a new node using the value passed to the function
-//if there is no head property on the list, set the head and tail to be the newly created node 
-//otherwise set the newly created node's next property to be current head property on the list
-//set the head property on the list to be that newly created node 
-//increment the length of list by 1 
-//return the linked list
+//Insert pseudo code 
 
 
 
-//Return the value of the node removed.
 
 
-// var first = new Node("Hi")
-// first.next = new Node("there")
-// first.next.next = new Node("how")
-// first.next.next.next = new Node("are")
+
+
 // first.next.next.next.next = new Node("you")
+//Return the value of the node removed.
+    
+    
+    // var first = new Node("Hi")
+    // first.next = new Node("there")
+    // first.next.next = new Node("how")
+    // first.next.next.next = new Node("are")
 
 var list = new SinglyLinkedList()
 list.push("HELLO")
