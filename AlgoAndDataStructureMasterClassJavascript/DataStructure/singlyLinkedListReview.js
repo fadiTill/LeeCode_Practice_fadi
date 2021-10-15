@@ -148,9 +148,26 @@ class SinglyLinkedList{
     
     }
     
+    //Remove 
+    //if the index is less than zero or greater than the length, return undefined
+    //if the index is the same as the length -1 , pop
+    //if the index is 0, shift
+    //otherwise, using the get method access the node at the index -1
+    //set the next property on that node to be the next of the next node
+    //decrement the length
+    //return the value of the node removed
     
-    
-    
+    remove(index){
+        if (index < 0 || index >= this.length) return undefined;
+        if(index === 0) return this.shift();
+        if (index === this.length-1)return this.pop();
+        var newNode = new Node(val);
+        var last = this.get(index - 1)
+        var temp = last.next;
+        localStorage.next = temp.next;
+        this.length--;
+        return temp
+    }
     
 }
 
