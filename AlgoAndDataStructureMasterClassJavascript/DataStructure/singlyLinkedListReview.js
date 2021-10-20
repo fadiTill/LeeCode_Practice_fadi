@@ -164,15 +164,41 @@ class SinglyLinkedList{
         var newNode = new Node(val);
         var last = this.get(index - 1)
         var temp = last.next;
-        localStorage.next = temp.next;
+        last.next = temp.next;
         this.length--;
         return temp
     }
-    
+    reverse(){
+        //swap the head and tail
+        
+        
+        //Create a variable called node and initialize it to the head property
+        var node = this.head;
+        this.head = this.tail;
+        this.tail = node;
+        //create a variable called next
+        var next;
+        //Create  a varaible called prev
+        var prev = null;
+        //loop trough the list
+        for(var i =  0; i < this.length; i++){
+            //set next to be the next property on watever node is 
+            next = node.next;
+            //set the next property on the node variable 
+            node.next = prev;
+            prev = node;
+            //set the node variable to be the value of the next variable
+            node = next;
+
+        }
+        return this;
+
+    }
 }
 
 
-//Insert pseudo code 
+
+
 
 
 
