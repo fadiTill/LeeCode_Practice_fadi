@@ -65,11 +65,39 @@ pop(){
       //return the value removed 
       return poppedNode
   }
+  //shift psudocode
+ shiftDoubly(){
+     // if length is 0, return undefined 
+    if (this.length === 0) return undefined;
+    //Store the current head property in a varible (oldHead)
+    var oldHead = this.head;
+    //if the length is one 
+    //set the head to be null
+   //set the tail to be null
+    if(this.length === 1 ){
+        this.head = null;
+        this.tail = null;
+        
+    }else {
+        //update the head to be the next of the old head 
+        
+        this.head = oldHead.next;
+        //set the head's prev property to null
+        this.head.prev = null;
+        //set the old head's next to null.
+       oldHead.next = null;
+
+        //decrement length
+    this.length--
+       //return oldhead
+    return oldHead
+
+  }
+}
 }
 list =  new DoublyLinkedList;
 console.log(list)
 list.pushDoubly(99)
-
 
 
 
