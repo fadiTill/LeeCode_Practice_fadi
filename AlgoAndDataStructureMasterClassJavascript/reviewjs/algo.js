@@ -74,26 +74,41 @@
 // same([1,2,3,2], [9,1,4,4])
 
 
-function validAnagram(first, second){
-    // add whatever parameters you deem necessary - good luck!
-    if(first.length !== second.length){
-        return false; 
-    }
-    const lookup ={};
-    for(let i= 0; i <first.length; i++){
-        let letter = first[i];
-        lookup[letter] ? lookup[letter] += 1: lookup[letter] = 1;
-    }
-    for(let i=0; i<second.length; i++){
-        let letter = second[i];
-        if (!lookup[letter]){
-            return false;
-        } else {
-            lookup[letter] -= 1
-        }
+// function validAnagram(first, second){
+    
+//     if(first.length !== second.length){
+//         return false; 
+//     }
+//     const lookup ={};
+//     for(let i= 0; i <first.length; i++){
+//         let letter = first[i];
+//         lookup[letter] ? lookup[letter] += 1: lookup[letter] = 1;
+//     }
+//     for(let i=0; i<second.length; i++){
+//         let letter = second[i];
+//         if (!lookup[letter]){
+//             return false;
+//         } else {
+//             lookup[letter] -= 1
+//         }
       
-    }
-    return true;
+//     }
+//     return true;
     
   
-  }
+//   }
+
+
+function sum(sortedArray){
+for(let i = 0; i < sortedArray.length; i++ ){
+    for (let j = i+1; j < sortedArray.length-1; j++){
+        if((sortedArray[i]+sortedArray[j]) === 0){
+            return [sortedArray[i],sortedArray[j]]
+    }
+    }
+}
+
+
+
+}
+sum([-4,-3,-2,-1,0,1,2,5])
