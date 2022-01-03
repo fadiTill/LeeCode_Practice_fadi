@@ -99,16 +99,34 @@
 //   }
 
 
-function sum(sortedArray){
-for(let i = 0; i < sortedArray.length; i++ ){
-    for (let j = i+1; j < sortedArray.length-1; j++){
-        if((sortedArray[i]+sortedArray[j]) === 0){
-            return [sortedArray[i],sortedArray[j]]
+// function sum(sortedArray){
+// for(let i = 0; i < sortedArray.length; i++ ){
+//     for (let j = i+1; j < sortedArray.length-1; j++){
+//         if((sortedArray[i]+sortedArray[j]) === 0){
+//             return [sortedArray[i],sortedArray[j]]
+//     }
+//     }
+// }
+
+
+
+// }
+// sum([-4,-3,-2,-1,0,1,2,5])
+
+
+function sum(arr){
+    let left = 0;
+    let right = arr.length-1;
+    while(left < right){
+        let sum = arr[left] + arr[right];
+        if(sum = 0){
+            return [arr[left], arr[right]];
+        } else if (sum > 0){
+            right--;
+        } else {
+            left++;
+        }
+
     }
-    }
-}
-
-
-
 }
 sum([-4,-3,-2,-1,0,1,2,5])
