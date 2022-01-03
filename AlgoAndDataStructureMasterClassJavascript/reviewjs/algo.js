@@ -47,28 +47,53 @@
 //refactored
 
 
-function same(array1, array2){
-    if(array1.length !== array2.length){
-        return false;
-    }
-    let frequencyCounter1 = {}
-    let frequencyCounter2 = {}
+// function same(array1, array2){
+//     if(array1.length !== array2.length){
+//         return false;
+//     }
+//     let frequencyCounter1 = {}
+//     let frequencyCounter2 = {}
 
-    for(let val of array1) {
-        frequencyCounter1[val] = ( frequencyCounter1[val]|| 0) + 1;
+//     for(let val of array1) {
+//         frequencyCounter1[val] = ( frequencyCounter1[val]|| 0) + 1;
+//     }
+//     for (let val of array2) {
+//         frequencyCounter2[val] = (frequencyCounter2[val]|| 0) + 1;
+//     }
+//     for(let key in frequencyCounter1){
+//         if(!(key ** 2 in frequencyCounter2)){
+//             return false;
+//         }
+//         if(frequencyCounter2[key**2] !== frequencyCounter1[key]){
+//             return false; 
+//         }
+//     }
+//     return true
+// }
+
+// same([1,2,3,2], [9,1,4,4])
+
+
+function validAnagram(first, second){
+    // add whatever parameters you deem necessary - good luck!
+    if(first.length !== second.length){
+        return false; 
     }
-    for (let val of array2) {
-        frequencyCounter2[val] = (frequencyCounter2[val]|| 0) + 1;
+    const lookup ={};
+    for(let i= 0; i <first.length; i++){
+        let letter = first[i];
+        lookup[letter] ? lookup[letter] += 1: lookup[letter] = 1;
     }
-    for(let key in frequencyCounter1){
-        if(!(key ** 2 in frequencyCounter2)){
+    for(let i=0; i<second.length; i++){
+        let letter = second[i];
+        if (!lookup[letter]){
             return false;
+        } else {
+            lookup[letter] -= 1
         }
-        if(frequencyCounter2[key**2] !== frequencyCounter1[key]){
-            return false; 
-        }
+      
     }
-    return true
-}
-
-same([1,2,3,2], [9,1,4,4])
+    return true;
+    
+  
+  }
