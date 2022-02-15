@@ -20,7 +20,7 @@ var generate = function(numRows) {
   //  [1,3,3,1],
   // [1,4,6,4,1]]
     let triangle = new Array(numRows);
-    for(let i= 0; i< numRows; i++){
+    for(let i= 0; i < numRows; i++){
         let row = new Array(i+1);
         row[0] = 1;
         row[row.length -1] = 1;
