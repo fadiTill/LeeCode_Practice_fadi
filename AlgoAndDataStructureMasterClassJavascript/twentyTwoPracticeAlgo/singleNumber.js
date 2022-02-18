@@ -16,10 +16,11 @@ var singleNumber = function(nums) {
     for(let i= 0; i< nums.length; i++){
        let num = nums[i];
      data[ num] ?  data[num]+=1 : data[ num]=1;
+    }
        for(let keys in data){
         console.log(`${keys}: ${data[keys]}`);
        if (data[keys] < 2)
            return keys
-   }
+ 
 }
 };
