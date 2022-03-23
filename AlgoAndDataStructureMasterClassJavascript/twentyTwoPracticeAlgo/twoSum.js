@@ -9,7 +9,6 @@ var twoSum = function(nums, target) {
                 }
             }
         }
-        // In case there is no solution, we'll just return null
         return null;
     
 
