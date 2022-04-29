@@ -18,4 +18,23 @@ for row in csv_f:
     with open('host.csv','w') as hosts_csv:
         writer = csv.writer(hosts_csv)
         writer.writerows(hosts)
+        #cat host_csv
 
+
+    #Reading and Writing CSV files with dictionaries
+    with open('software.csv') as software:
+        reader = csv.DictReader(software)
+    for row in reader:
+        print(("{}has{} users").format(row["name"], row["users"]))
+
+
+
+        users = [{"name": "sol Mansi", "username":"solm", "department":"IT infrastructure"},
+                {"name": "Lio Nelson", "username":"lion", "department":"User Experirnce research"}]
+
+        keys = ["name","username","departement"]
+    with open('by_departement.csv','w') as by_departement:
+        writer = csv.DictWriter(by_departement, fieldnames=keys)
+        #write first line bases on keys 
+        writer.writeheader()
+        writer.writerows(users)
