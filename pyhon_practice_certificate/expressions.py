@@ -9,7 +9,7 @@ print(log[index+1:index+6])
 #12345
 
 
-from importlib.machinery import WindowsRegistryFinder
+
 import re
 log = "July 31 07:51:48 mycomputer bad_process[12345]: ERROR Performing package upgrade"
 regex = "r\[(\d+)\]"
