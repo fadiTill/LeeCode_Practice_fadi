@@ -10,6 +10,10 @@
 #atom seconds.py
 
 #!/usr/bin/env pyhon3
+import py_compile
+from typing import Concatenate
+
+
 def to_seconds(hours, minutes, seconds):
     return hours*3600+minutes*60+seconds
 
@@ -26,4 +30,21 @@ while(cont.lower()=="y"):
     cont = input("Do you want to do another conversion?[y to continue] ")
 
 print("Good bye!")
+
+#cat streams.py
+#!usr/bin/env/python3
+
+data = input("This will come from STDIN:")
+print("Now we write it to STOUT: + data")
+print("Now we generate an error to STDERR:" + data + 1)
+
+#./streams.py_compile
+#This will come from STDIN: Python ROCKS!!!
+#Now we write is to STDOUT: Python ROKS!!!
+#Traceback(most recent call last):
+#File"./streams.py, line 5, in <module>"
+  # print("Now we generate an error to STDERR:" + data +1)
+#TypeError: can only Concatenate str (not "int") to str
+
+
 
