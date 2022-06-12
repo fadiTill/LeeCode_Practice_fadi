@@ -17,3 +17,6 @@
  #ls -la -> show iden files 
  # mv -> move or rename file ->  mv myfile.txt emptyfile.txt
  # cp spider.txt yetanotherfile.txt
+
+# > send data and overwrite
+## append
